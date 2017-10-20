@@ -139,6 +139,9 @@
                                 <color key="backgroundColor" red="0.49670031186054164" green="1" blue="0.69258830188913612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Let's Start!"/>
+                                <connections>
+                                    <segue destination="SO1-zb-IrM" kind="show" id="ibM-DF-i4t"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -169,6 +172,132 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sqB-hj-P9O">
+            <objects>
+                <viewController id="SO1-zb-IrM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vih-vS-L6c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setup Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3u-Oy-uhx">
+                                <rect key="frame" x="87" y="69" width="213" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MYN-uO-BdY">
+                                <rect key="frame" x="73" y="169" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Quitter will ask how many cigarettes you are smoking daily. These notifications will prompt you to enter the amount you smoked today. For the best results, you should do it nightly. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8u-oc-tNi">
+                                <rect key="frame" x="146" y="537" width="94" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.48557008335252261" green="1" blue="0.60807785065454845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="TAD-Zy-yP2" kind="show" id="9cq-KV-hs3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="WCM-EP-AIH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLD-qe-dwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1165.5999999999999" y="118.29085457271366"/>
+        </scene>
+        <!--Quitter Progress-->
+        <scene sceneID="U1L-7X-duZ">
+            <objects>
+                <viewController title="Quitter Progress" id="4rV-Aw-8v6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ki3-wH-tvt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="6d8-8a-1MY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Quitter Progress" id="BTx-eL-Uef"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U5n-ey-ErA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3270" y="450"/>
+        </scene>
+        <!--Quitter Stats-->
+        <scene sceneID="398-SO-SHY">
+            <objects>
+                <viewController title="Quitter Stats" id="XC9-5S-vS3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jAc-G6-62b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="dik-Td-nYW"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Quitter Stats" id="vMY-lm-MQS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jsk-51-YRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3266" y="1126"/>
+        </scene>
+        <!--Smoker Stats-->
+        <scene sceneID="cPj-e5-fxj">
+            <objects>
+                <viewController title="Smoker Stats" id="nQB-jF-nJd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9sN-wU-5Co">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="jLJ-wS-WD3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Smoker Stats" id="re5-E9-cCH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVX-jj-x66" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3270" y="-214"/>
+        </scene>
+        <!--Smoker Progress-->
+        <scene sceneID="c34-Vf-P62">
+            <objects>
+                <viewController title="Smoker Progress" id="eVv-g9-sB0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PYs-4s-918">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="agQ-pB-mE8"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Smoker Progress" id="rdY-9G-TjF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQi-Ya-ac1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3252" y="-886"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="sGb-PL-8BJ">
+            <objects>
+                <tabBarController id="TAD-Zy-yP2" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rey-FA-g90">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eVv-g9-sB0" kind="relationship" relationship="viewControllers" id="N29-4e-Rbx"/>
+                        <segue destination="nQB-jF-nJd" kind="relationship" relationship="viewControllers" id="Jjm-DP-Lkf"/>
+                        <segue destination="4rV-Aw-8v6" kind="relationship" relationship="viewControllers" id="Fqf-ep-4WC"/>
+                        <segue destination="XC9-5S-vS3" kind="relationship" relationship="viewControllers" id="gNA-EK-K2i"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kxI-sa-L3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2316" y="117"/>
         </scene>
     </scenes>
 </document>
