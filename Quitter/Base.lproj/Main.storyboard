@@ -140,7 +140,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Let's Start!"/>
                                 <connections>
-                                    <segue destination="SO1-zb-IrM" kind="show" id="ibM-DF-i4t"/>
+                                    <segue destination="SO1-zb-IrM" kind="show" identifier="letsStartSegue" id="ibM-DF-i4t"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -250,7 +250,7 @@
         <!--Smoker Stats-->
         <scene sceneID="cPj-e5-fxj">
             <objects>
-                <viewController title="Smoker Stats" id="nQB-jF-nJd" sceneMemberID="viewController">
+                <viewController title="Smoker Stats" id="nQB-jF-nJd" customClass="SmokerStatsViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9sN-wU-5Co">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

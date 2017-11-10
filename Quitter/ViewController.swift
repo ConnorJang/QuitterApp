@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import os.log
 
 class ViewController: UIViewController {
+    
+    var smokerData: SmokerData? = SmokerData(smokesPerDay: 0, smokesPerPack: 0, costPerPack: 0, yearsSmoking: 0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,28 +45,69 @@ class ViewController: UIViewController {
     // Values changed in the textfield, setting stepper to the new value
     @IBAction func smokesPerDayChanged(_ sender: UITextField) {
         smokesPerDayStepper.value = Double(smokesPerDayField.text!)!
+        print("smokesperdaychanged")
     }
     @IBAction func smokesPerPackChanged(_ sender: UITextField) {
         smokesPerPackStepper.value = Double(smokesPerPackField.text!)!
     }
     @IBAction func yearsSmokingChanged(_ sender: UITextField) {
         yearsSmokingStepper.value = Double(yearsSmokingField.text!)!
+        smokerData?.yearsSmoking = yearsSmokingStepper.value
     }
     
     
     // Stepper actions - incrementing/decrementing the textfields
     @IBAction func smokesPerDayAction(_ sender: UIStepper) {
         smokesPerDayField.text = Int(sender.value).description
+        smokerData?.smokesPerDay = smokesPerDayStepper.value
     }
     @IBAction func smokesPerPackAction(_ sender: UIStepper) {
         smokesPerPackField.text = Int(sender.value).description
     }
     @IBAction func costPerPackAction(_ sender: UIStepper) {
+
     }
     @IBAction func yearsSmokingAction(_ sender: UIStepper) {
         yearsSmokingField.text = Int(sender.value).description
+        smokerData?.yearsSmoking = yearsSmokingStepper.value
+
     }
     
+    override func performSegue(withIdentifier letsStartSegue: String, sender: Any?) {
+        saveSmokerData()
+        print("SmokersPerDay = \(smokerData?.smokesPerDay ?? -1)")
+        print("smokesPerPack = \(smokerData?.smokesPerPack ?? -1)")
+        print("costPerPack = $\(smokerData?.costPerPack ?? -1)")
+        print("yearsSmoking = \(smokerData?.yearsSmoking ?? -1)")
+        
+    }
+    
+    // Saving the data entered by the user
+    private func saveSmokerData() {
+        // Grab the data from the input boxes, then save the 0bject
+        smokerData?.smokesPerDay = Double(smokesPerDayField.text!)!
+        smokerData?.smokesPerPack = Double(smokesPerPackField.text!)!
+        smokerData?.yearsSmoking = Double(yearsSmokingField.text!)!
+        // Removing '$' from cost value
+        var costString:String = costPerPackField.text!
+        costString.remove(at: costString.startIndex)
+        smokerData?.costPerPack = Double(costString)!
+        
+        
+        
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(smokerData as Any, toFile: SmokerData.ArchiveURL.path)
+        
+        if isSuccessfulSave {
+            os_log("Data successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save Data...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    // For loading the data
+    private func loadSmokerData() -> [SmokerData]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: SmokerData.ArchiveURL.path) as? [SmokerData]
+    }
     
     
 

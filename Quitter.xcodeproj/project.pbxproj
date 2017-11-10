@@ -13,6 +13,8 @@
 		138A295D1F973007006EA406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 138A295C1F973007006EA406 /* Assets.xcassets */; };
 		138A29601F973007006EA406 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138A295E1F973007006EA406 /* LaunchScreen.storyboard */; };
 		138A296B1F973007006EA406 /* QuitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138A296A1F973007006EA406 /* QuitterTests.swift */; };
+		EA05ABF41F9A92D20096525A /* SmokerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA05ABF31F9A92D20096525A /* SmokerStatsViewController.swift */; };
+		EA1A15DD1FB634EE0042E79E /* SmokerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A15DC1FB634EE0042E79E /* SmokerData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		138A29661F973007006EA406 /* QuitterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuitterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		138A296A1F973007006EA406 /* QuitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitterTests.swift; sourceTree = "<group>"; };
 		138A296C1F973007006EA406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA05ABF31F9A92D20096525A /* SmokerStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokerStatsViewController.swift; sourceTree = "<group>"; };
+		EA1A15DC1FB634EE0042E79E /* SmokerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokerData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +83,12 @@
 			children = (
 				138A29551F973007006EA406 /* AppDelegate.swift */,
 				138A29571F973007006EA406 /* ViewController.swift */,
+				EA1A15DC1FB634EE0042E79E /* SmokerData.swift */,
 				138A29591F973007006EA406 /* Main.storyboard */,
 				138A295C1F973007006EA406 /* Assets.xcassets */,
 				138A295E1F973007006EA406 /* LaunchScreen.storyboard */,
 				138A29611F973007006EA406 /* Info.plist */,
+				EA05ABF31F9A92D20096525A /* SmokerStatsViewController.swift */,
 			);
 			path = Quitter;
 			sourceTree = "<group>";
@@ -201,6 +207,8 @@
 			files = (
 				138A29581F973007006EA406 /* ViewController.swift in Sources */,
 				138A29561F973007006EA406 /* AppDelegate.swift in Sources */,
+				EA1A15DD1FB634EE0042E79E /* SmokerData.swift in Sources */,
+				EA05ABF41F9A92D20096525A /* SmokerStatsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
