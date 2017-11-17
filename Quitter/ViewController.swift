@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         smokesPerPackStepper.value = Double(smokesPerPackField.text!)!
         //costPerPackStepper.value = Double(costPerPackField.text!)!
         yearsSmokingStepper.value = Double(yearsSmokingField.text!)!
+
     }
 
     override func didReceiveMemoryWarning() {
