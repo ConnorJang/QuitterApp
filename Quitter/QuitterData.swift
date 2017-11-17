@@ -61,6 +61,39 @@ class QuitterData: NSObject, NSCoding {
         self.init(cigsSmoked : cigsSmoked)
     }
     
+    
+    func getDateFormatted(format : String) -> String
+    {
+        var dateString : String
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale.current // Set to current locale (implicitly set, but here's the explicit way)
+        
+        switch format
+        {
+        case "long":
+            dateFormatter.dateStyle = DateFormatter.Style.long
+            dateString = dateFormatter.string(from: date as Date)
+            return dateString
+        
+        case "medium":
+            dateFormatter.dateStyle = DateFormatter.Style.medium
+            dateString = dateFormatter.string(from: date as Date)
+            return dateString
+            
+        case "short":
+            dateFormatter.dateStyle = DateFormatter.Style.short
+            dateString = dateFormatter.string(from: date as Date)
+            return dateString
+        
+        default:
+            dateString = "Invalid date style..."
+            return dateString
+        }
+        
+        
+        
+        return dateString
+    }
 }
 
 
