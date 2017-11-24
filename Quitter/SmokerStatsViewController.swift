@@ -12,7 +12,12 @@ class SmokerStatsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let data : [SmokerData] = loadSmokerData()!
+        print("printing data inside statsviewcontroller")
+        for item in data {
+            item.printSmokerData()
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -20,7 +25,10 @@ class SmokerStatsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // For loading the data
+    public func loadSmokerData() -> [SmokerData]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: SmokerData.ArchiveURL.path) as? [SmokerData]
+    }
 
     /*
     // MARK: - Navigation

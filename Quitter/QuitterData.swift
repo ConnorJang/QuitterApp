@@ -89,10 +89,6 @@ class QuitterData: NSObject, NSCoding {
             dateString = "Invalid date style..."
             return dateString
         }
-        
-        
-        
-        return dateString
     }
 }
 

@@ -64,28 +64,20 @@ class SmokerData: NSObject, NSCoding {
     required convenience init?(coder aDecoder: NSCoder)
     {
         // The smokesPerDay is required. If we cannot decode an Double, the initializer should fail.
-        guard let smokesPerDay = aDecoder.decodeObject(forKey: PropertyKey.smokesPerDay) as? Double else {
-            os_log("Unable to decode the smokesPerDay for a SmokerData object.", log: OSLog.default, type: .debug)
-            return nil
-        }
+        let smokesPerDay = aDecoder.decodeDouble(forKey: PropertyKey.smokesPerDay)
         // The smokesPerPack is required. If we cannot decode an Double, the initializer should fail.
-        guard let smokesPerPack = aDecoder.decodeObject(forKey: PropertyKey.smokesPerPack) as? Double else {
-            os_log("Unable to decode the smokesPerPack for a SmokerData object.", log: OSLog.default, type: .debug)
-            return nil
-        }
+        let smokesPerPack = aDecoder.decodeDouble(forKey: PropertyKey.smokesPerPack)
         // The costPerPack is required. If we cannot decode an Double, the initializer should fail.
-        guard let costPerPack = aDecoder.decodeObject(forKey: PropertyKey.costPerPack) as? Double else {
-            os_log("Unable to decode the costPerPack for a SmokerData object.", log: OSLog.default, type: .debug)
-            return nil
-        }
+        let costPerPack = aDecoder.decodeDouble(forKey: PropertyKey.costPerPack)
         // The smokesPerDay is required. If we cannot decode an Double, the initializer should fail.
-        guard let yearsSmoking = aDecoder.decodeObject(forKey: PropertyKey.yearsSmoking) as? Double else {
-            os_log("Unable to decode the yearsSmoking for a SmokerData object.", log: OSLog.default, type: .debug)
-            return nil
-        }
-        
+        let yearsSmoking = aDecoder.decodeDouble(forKey: PropertyKey.yearsSmoking)
         // Must call designated initializer.
         self.init(smokesPerDay: smokesPerDay, smokesPerPack: smokesPerPack, costPerPack: costPerPack, yearsSmoking: yearsSmoking)
+    }
+    
+    func printSmokerData()
+    {
+        print("Smokes Per day: \(smokesPerDay) \n Smokes Per Pack \(smokesPerPack) \n Cost Per Pack \(costPerPack) \n Years Smoking: \(yearsSmoking)")
     }
     
 }

@@ -20,11 +20,21 @@ class ViewController: UIViewController {
         // Setup the Steppers
         smokesPerDayStepper.value = Double(smokesPerDayField.text!)!
         smokesPerPackStepper.value = Double(smokesPerPackField.text!)!
-        //costPerPackStepper.value = Double(costPerPackField.text!)!
+        // Removing '$' from cost value
+        var costString:String = costPerPackField.text!
+        costString.remove(at: costString.startIndex)
+        costPerPackStepper.value = Double(costString)!
         yearsSmokingStepper.value = Double(yearsSmokingField.text!)!
 
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let data = loadSmokerData()
+        if data != nil {
+            print("should be going to tabs view now...")
+            performSegue(withIdentifier: "goToTabs", sender: self)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,7 +56,7 @@ class ViewController: UIViewController {
     // Values changed in the textfield, setting stepper to the new value
     @IBAction func smokesPerDayChanged(_ sender: UITextField) {
         smokesPerDayStepper.value = Double(smokesPerDayField.text!)!
-        print("smokesperdaychanged")
+        print("smokesperdaychanged \(smokesPerDayStepper.value)")
     }
     @IBAction func smokesPerPackChanged(_ sender: UITextField) {
         smokesPerPackStepper.value = Double(smokesPerPackField.text!)!
@@ -74,15 +84,14 @@ class ViewController: UIViewController {
 
     }
     
-    override func performSegue(withIdentifier letsStartSegue: String, sender: Any?) {
+    @IBAction func letsStartAction(_ sender: UIButton) {
         saveSmokerData()
-        print("SmokersPerDay = \(smokerData?.smokesPerDay ?? -1)")
-        print("smokesPerPack = \(smokerData?.smokesPerPack ?? -1)")
-        print("costPerPack = $\(smokerData?.costPerPack ?? -1)")
-        print("yearsSmoking = \(smokerData?.yearsSmoking ?? -1)")
-        
+//        print("SmokersPerDay = \(smokerData?.smokesPerDay ?? -1)")
+//        print("smokesPerPack = \(smokerData?.smokesPerPack ?? -1)")
+//        print("costPerPack = $\(smokerData?.costPerPack ?? -1)")
+//        print("yearsSmoking = \(smokerData?.yearsSmoking ?? -1)")
+        performSegue(withIdentifier: "letsStartSegue", sender: sender)
     }
-    
     // Saving the data entered by the user
     private func saveSmokerData() {
         // Grab the data from the input boxes, then save the 0bject
@@ -94,19 +103,23 @@ class ViewController: UIViewController {
         costString.remove(at: costString.startIndex)
         smokerData?.costPerPack = Double(costString)!
         
+        var savedArray = [SmokerData]()
+        savedArray.append(smokerData!)
         
         
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(smokerData as Any, toFile: SmokerData.ArchiveURL.path)
+        
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(savedArray as Any, toFile: SmokerData.ArchiveURL.path)
         
         if isSuccessfulSave {
             os_log("Data successfully saved.", log: OSLog.default, type: .debug)
         } else {
             os_log("Failed to save Data...", log: OSLog.default, type: .error)
         }
+        smokerData?.printSmokerData()
     }
     
     // For loading the data
-    private func loadSmokerData() -> [SmokerData]?  {
+    public func loadSmokerData() -> [SmokerData]?  {
         return NSKeyedUnarchiver.unarchiveObject(withFile: SmokerData.ArchiveURL.path) as? [SmokerData]
     }
     
