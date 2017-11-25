@@ -10,16 +10,30 @@ import UIKit
 
 class SmokerStatsViewController: UIViewController {
 
+    var cashBurned = 0.0
+    var cigsSmoked = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let data : [SmokerData] = loadSmokerData()!
+        print("printing data inside Smoker Stats")
+        for item in data {
+            item.printSmokerData()
+        }
+        
         // Do any additional setup after loading the view.
+        cashBurned = (data[0].smokesPerDay/data[0].smokesPerPack) * (data[0].yearsSmoking * 365) * data[0].costPerPack
+        print("Cash burned: \(cashBurned)")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // For loading the data
+    public func loadSmokerData() -> [SmokerData]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: SmokerData.ArchiveURL.path) as? [SmokerData]
+    }
 
     /*
     // MARK: - Navigation
