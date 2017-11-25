@@ -8,6 +8,7 @@
 
 import UIKit
 import os.log
+import Foundation
 
 class SmokerData: NSObject, NSCoding {
     
@@ -19,6 +20,7 @@ class SmokerData: NSObject, NSCoding {
         static let smokesPerPack = "smokesPerPack"
         static let costPerPack = "costPerPack"
         static let yearsSmoking = "yearsSmoking"
+        static let date = "date"
     }
 
     
@@ -27,6 +29,7 @@ class SmokerData: NSObject, NSCoding {
     var smokesPerPack: Double
     var costPerPack: Double
     var yearsSmoking: Double
+    var date : NSDate
     
     // Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -34,7 +37,7 @@ class SmokerData: NSObject, NSCoding {
     
     
     // Initialization
-    init?(smokesPerDay: Double, smokesPerPack: Double, costPerPack: Double, yearsSmoking: Double)
+    init?(smokesPerDay: Double, smokesPerPack: Double, costPerPack: Double, yearsSmoking: Double, date: NSDate)
     {
         // Initialization should fail if there is no name or if the rating is negative.
         if smokesPerPack < 0 || smokesPerPack < 0 || costPerPack < 0.0 || yearsSmoking < 0.0
@@ -46,6 +49,7 @@ class SmokerData: NSObject, NSCoding {
         self.smokesPerPack = smokesPerPack
         self.costPerPack = costPerPack
         self.yearsSmoking = yearsSmoking
+        self.date = date
     }
     
     
@@ -56,6 +60,7 @@ class SmokerData: NSObject, NSCoding {
         aCoder.encode(smokesPerPack, forKey: PropertyKey.smokesPerPack)
         aCoder.encode(costPerPack, forKey: PropertyKey.costPerPack)
         aCoder.encode(yearsSmoking, forKey: PropertyKey.yearsSmoking)
+        aCoder.encode(date, forKey: PropertyKey.date)
     }
     
     // Required - means this initializer must be implemented on every subclass
@@ -71,13 +76,14 @@ class SmokerData: NSObject, NSCoding {
         let costPerPack = aDecoder.decodeDouble(forKey: PropertyKey.costPerPack)
         // The smokesPerDay is required. If we cannot decode an Double, the initializer should fail.
         let yearsSmoking = aDecoder.decodeDouble(forKey: PropertyKey.yearsSmoking)
+        let date = aDecoder.decodeObject(forKey: PropertyKey.date) as? NSDate
         // Must call designated initializer.
-        self.init(smokesPerDay: smokesPerDay, smokesPerPack: smokesPerPack, costPerPack: costPerPack, yearsSmoking: yearsSmoking)
+        self.init(smokesPerDay: smokesPerDay, smokesPerPack: smokesPerPack, costPerPack: costPerPack, yearsSmoking: yearsSmoking, date: date!)
     }
     
     func printSmokerData()
     {
-        print("Smokes Per day: \(smokesPerDay) \n Smokes Per Pack \(smokesPerPack) \n Cost Per Pack \(costPerPack) \n Years Smoking: \(yearsSmoking)")
+        print("Smokes Per day: \(smokesPerDay) \nSmokes Per Pack \(smokesPerPack) \nCost Per Pack \(costPerPack) \nYears Smoking: \(yearsSmoking) \nDate: \(date)")
     }
     
 }

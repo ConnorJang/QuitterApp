@@ -11,7 +11,7 @@ import os.log
 
 class ViewController: UIViewController {
     
-    var smokerData: SmokerData? = SmokerData(smokesPerDay: 0, smokesPerPack: 0, costPerPack: 0, yearsSmoking: 0)
+    var smokerData: SmokerData? = SmokerData(smokesPerDay: 0, smokesPerPack: 0, costPerPack: 0, yearsSmoking: 0, date: NSDate())
 
     override func viewDidLoad() {
         super.viewDidLoad()

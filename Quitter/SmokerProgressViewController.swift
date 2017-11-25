@@ -1,17 +1,18 @@
 //
-//  SmokerStatsViewController.swift
+//  SmokerProgressViewController.swift
 //  Quitter
 //
-//  Created by Connor Jang on 2017-10-20.
+//  Created by Connor Jang on 2017-11-24.
 //  Copyright © 2017 iMac03. All rights reserved.
 //
 
 import UIKit
 
-class SmokerStatsViewController: UIViewController {
+class SmokerProgressViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
 

@@ -498,7 +498,7 @@
         <!--Smoker Progress-->
         <scene sceneID="c34-Vf-P62">
             <objects>
-                <viewController title="Smoker Progress" id="eVv-g9-sB0" sceneMemberID="viewController">
+                <viewController title="Smoker Progress" id="eVv-g9-sB0" customClass="SmokerProgressViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PYs-4s-918">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -568,10 +568,10 @@
             </objects>
             <point key="canvasLocation" x="3252" y="-886.50674662668678"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tabs View Controller-->
         <scene sceneID="sGb-PL-8BJ">
             <objects>
-                <tabBarController id="TAD-Zy-yP2" sceneMemberID="viewController">
+                <tabBarController id="TAD-Zy-yP2" customClass="TabsViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rey-FA-g90">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -590,6 +590,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hDQ-fz-Kjy"/>
+        <segue reference="9cq-KV-hs3"/>
     </inferredMetricsTieBreakers>
 </document>
