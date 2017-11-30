@@ -239,7 +239,7 @@
         <!--Quitter Progress-->
         <scene sceneID="U1L-7X-duZ">
             <objects>
-                <viewController title="Quitter Progress" id="4rV-Aw-8v6" sceneMemberID="viewController">
+                <viewController title="Quitter Progress" id="4rV-Aw-8v6" customClass="QuitterTabViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ki3-wH-tvt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -379,12 +379,12 @@
         <!--Total Statistics-->
         <scene sceneID="cPj-e5-fxj">
             <objects>
-                <viewController title="Total Statistics" id="nQB-jF-nJd" customClass="SmokerStatsViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Total Statistics" id="nQB-jF-nJd" customClass="TotalTabViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9sN-wU-5Co">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Statistics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuA-BK-nzq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuA-BK-nzq">
                                 <rect key="frame" x="102" y="20" width="171" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
@@ -498,7 +498,7 @@
         <!--Smoker Progress-->
         <scene sceneID="c34-Vf-P62">
             <objects>
-                <viewController title="Smoker Progress" id="eVv-g9-sB0" customClass="SmokerProgressViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Smoker Progress" id="eVv-g9-sB0" customClass="SmokerTabViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PYs-4s-918">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

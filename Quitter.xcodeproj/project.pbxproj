@@ -13,9 +13,10 @@
 		138A295D1F973007006EA406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 138A295C1F973007006EA406 /* Assets.xcassets */; };
 		138A29601F973007006EA406 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138A295E1F973007006EA406 /* LaunchScreen.storyboard */; };
 		138A296B1F973007006EA406 /* QuitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138A296A1F973007006EA406 /* QuitterTests.swift */; };
-		EA05ABF41F9A92D20096525A /* SmokerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA05ABF31F9A92D20096525A /* SmokerStatsViewController.swift */; };
+		13E6BE9E1FCFC42E0015A957 /* QuitterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6BE9D1FCFC42E0015A957 /* QuitterTabViewController.swift */; };
+		13E6BEA01FCFC5450015A957 /* SmokerTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6BE9F1FCFC5450015A957 /* SmokerTabViewController.swift */; };
+		13E6BEA21FCFC55E0015A957 /* TotalTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6BEA11FCFC55E0015A957 /* TotalTabViewController.swift */; };
 		EA1A15DD1FB634EE0042E79E /* SmokerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A15DC1FB634EE0042E79E /* SmokerData.swift */; };
-		EAC310301FC8DB7E00D6AA0B /* SmokerProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3102F1FC8DB7E00D6AA0B /* SmokerProgressViewController.swift */; };
 		EAC310321FC8DC8B00D6AA0B /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC310311FC8DC8B00D6AA0B /* TabsViewController.swift */; };
 		EAD50D911FBF867500806242 /* QuitterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD50D901FBF867500806242 /* QuitterData.swift */; };
 /* End PBXBuildFile section */
@@ -41,9 +42,10 @@
 		138A29661F973007006EA406 /* QuitterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuitterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		138A296A1F973007006EA406 /* QuitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitterTests.swift; sourceTree = "<group>"; };
 		138A296C1F973007006EA406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA05ABF31F9A92D20096525A /* SmokerStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokerStatsViewController.swift; sourceTree = "<group>"; };
+		13E6BE9D1FCFC42E0015A957 /* QuitterTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitterTabViewController.swift; sourceTree = "<group>"; };
+		13E6BE9F1FCFC5450015A957 /* SmokerTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokerTabViewController.swift; sourceTree = "<group>"; };
+		13E6BEA11FCFC55E0015A957 /* TotalTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalTabViewController.swift; sourceTree = "<group>"; };
 		EA1A15DC1FB634EE0042E79E /* SmokerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokerData.swift; sourceTree = "<group>"; };
-		EAC3102F1FC8DB7E00D6AA0B /* SmokerProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokerProgressViewController.swift; sourceTree = "<group>"; };
 		EAC310311FC8DC8B00D6AA0B /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		EAD50D901FBF867500806242 /* QuitterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitterData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,17 +89,15 @@
 		138A29541F973007006EA406 /* Quitter */ = {
 			isa = PBXGroup;
 			children = (
+				13E6BEA31FCFC7160015A957 /* TabsControllers */,
 				138A29551F973007006EA406 /* AppDelegate.swift */,
 				138A29571F973007006EA406 /* ViewController.swift */,
 				EA1A15DC1FB634EE0042E79E /* SmokerData.swift */,
 				EAD50D901FBF867500806242 /* QuitterData.swift */,
 				138A29591F973007006EA406 /* Main.storyboard */,
-				EAC310311FC8DC8B00D6AA0B /* TabsViewController.swift */,
 				138A295C1F973007006EA406 /* Assets.xcassets */,
 				138A295E1F973007006EA406 /* LaunchScreen.storyboard */,
 				138A29611F973007006EA406 /* Info.plist */,
-				EAC3102F1FC8DB7E00D6AA0B /* SmokerProgressViewController.swift */,
-				EA05ABF31F9A92D20096525A /* SmokerStatsViewController.swift */,
 			);
 			path = Quitter;
 			sourceTree = "<group>";
@@ -109,6 +109,17 @@
 				138A296C1F973007006EA406 /* Info.plist */,
 			);
 			path = QuitterTests;
+			sourceTree = "<group>";
+		};
+		13E6BEA31FCFC7160015A957 /* TabsControllers */ = {
+			isa = PBXGroup;
+			children = (
+				13E6BE9F1FCFC5450015A957 /* SmokerTabViewController.swift */,
+				13E6BEA11FCFC55E0015A957 /* TotalTabViewController.swift */,
+				13E6BE9D1FCFC42E0015A957 /* QuitterTabViewController.swift */,
+				EAC310311FC8DC8B00D6AA0B /* TabsViewController.swift */,
+			);
+			path = TabsControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,12 +226,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				138A29581F973007006EA406 /* ViewController.swift in Sources */,
+				13E6BEA21FCFC55E0015A957 /* TotalTabViewController.swift in Sources */,
 				EAC310321FC8DC8B00D6AA0B /* TabsViewController.swift in Sources */,
 				138A29561F973007006EA406 /* AppDelegate.swift in Sources */,
-				EAC310301FC8DB7E00D6AA0B /* SmokerProgressViewController.swift in Sources */,
 				EA1A15DD1FB634EE0042E79E /* SmokerData.swift in Sources */,
+				13E6BEA01FCFC5450015A957 /* SmokerTabViewController.swift in Sources */,
+				13E6BE9E1FCFC42E0015A957 /* QuitterTabViewController.swift in Sources */,
 				EAD50D911FBF867500806242 /* QuitterData.swift in Sources */,
-				EA05ABF41F9A92D20096525A /* SmokerStatsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
