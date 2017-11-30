@@ -245,43 +245,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quitter Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKY-gO-aCp">
-                                <rect key="frame" x="102" y="20" width="171" height="53"/>
+                                <rect key="frame" x="102" y="20" width="171" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time since last cigarette: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne2-8q-Q9r">
-                                <rect key="frame" x="16" y="128" width="196" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="EBh-YG-Nj0"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cigs resisted: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGD-jy-Kgb">
+                                <rect key="frame" x="16" y="281" width="343" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cigs withheld: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGD-jy-Kgb">
-                                <rect key="frame" x="16" y="184" width="274" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="tW0-ry-dZz"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Money Saved:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ER-Ly-xxq">
+                                <rect key="frame" x="16" y="392" width="343" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money Saved:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ER-Ly-xxq">
-                                <rect key="frame" x="16" y="238" width="210" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="rii-jf-xOt"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lifetime saved:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfN-Ec-PEt">
+                                <rect key="frame" x="16" y="502" width="343" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life regained: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfN-Ec-PEt">
-                                <rect key="frame" x="16" y="306" width="116" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="97m-QQ-rQb"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time since quit:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne2-8q-Q9r">
+                                <rect key="frame" x="16" y="176" width="343" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -289,25 +281,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9ER-Ly-xxq" firstAttribute="top" secondItem="uGD-jy-Kgb" secondAttribute="bottom" constant="33" id="5Ld-I5-8jU"/>
-                            <constraint firstItem="uGD-jy-Kgb" firstAttribute="leading" secondItem="9ER-Ly-xxq" secondAttribute="leading" id="FCO-eD-pre"/>
                             <constraint firstItem="GKY-gO-aCp" firstAttribute="top" secondItem="6d8-8a-1MY" secondAttribute="top" id="GDq-fw-W2p"/>
-                            <constraint firstItem="ne2-8q-Q9r" firstAttribute="leading" secondItem="uGD-jy-Kgb" secondAttribute="leading" id="Hvy-Q9-zV5"/>
-                            <constraint firstItem="6d8-8a-1MY" firstAttribute="trailing" secondItem="BfN-Ec-PEt" secondAttribute="trailing" constant="243" id="RDK-h2-FTk"/>
-                            <constraint firstItem="9ER-Ly-xxq" firstAttribute="leading" secondItem="BfN-Ec-PEt" secondAttribute="leading" id="UL9-zo-xJE"/>
-                            <constraint firstItem="ne2-8q-Q9r" firstAttribute="top" secondItem="GKY-gO-aCp" secondAttribute="bottom" constant="55" id="YyF-LV-vNI"/>
-                            <constraint firstItem="6d8-8a-1MY" firstAttribute="trailing" secondItem="9ER-Ly-xxq" secondAttribute="trailing" constant="149" id="bXg-Jl-GJp"/>
                             <constraint firstItem="GKY-gO-aCp" firstAttribute="centerX" secondItem="Ki3-wH-tvt" secondAttribute="centerX" id="gyz-yU-xFI"/>
                             <constraint firstItem="GKY-gO-aCp" firstAttribute="leading" secondItem="6d8-8a-1MY" secondAttribute="leading" constant="102" id="nLV-jy-Y8I"/>
-                            <constraint firstItem="ne2-8q-Q9r" firstAttribute="leading" secondItem="Ki3-wH-tvt" secondAttribute="leadingMargin" id="pZR-VA-ssS"/>
-                            <constraint firstItem="uGD-jy-Kgb" firstAttribute="top" secondItem="ne2-8q-Q9r" secondAttribute="bottom" constant="35" id="tCi-kq-r5K"/>
-                            <constraint firstItem="BfN-Ec-PEt" firstAttribute="top" secondItem="9ER-Ly-xxq" secondAttribute="bottom" constant="47" id="tYf-oE-fTP"/>
-                            <constraint firstItem="6d8-8a-1MY" firstAttribute="bottom" secondItem="BfN-Ec-PEt" secondAttribute="bottom" constant="291" id="w03-43-Zsy"/>
-                            <constraint firstItem="6d8-8a-1MY" firstAttribute="trailing" secondItem="uGD-jy-Kgb" secondAttribute="trailing" constant="85" id="wbH-3a-1bn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6d8-8a-1MY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Quitter" id="BTx-eL-Uef"/>
+                    <connections>
+                        <outlet property="cigsLabel" destination="uGD-jy-Kgb" id="YI5-pR-BFt"/>
+                        <outlet property="lifeLabel" destination="BfN-Ec-PEt" id="xoL-Jn-t1u"/>
+                        <outlet property="moneyLabel" destination="9ER-Ly-xxq" id="On0-91-kZ7"/>
+                        <outlet property="timeLabel" destination="ne2-8q-Q9r" id="1xs-Ab-Yz2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5n-ey-ErA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

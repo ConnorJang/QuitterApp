@@ -15,6 +15,13 @@ class QuitterTabViewController: UIViewController {
     var cigsSmoked = 0
     var lifeLostMins = 0
     
+    // Connecting labels
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var cigsLabel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var lifeLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,23 +31,25 @@ class QuitterTabViewController: UIViewController {
         print("---------------------- Quitter Stats ------------------------")
         
         let secsSinceQuit : Int = data[0].timeSinceQuit()
-        let daysSince = secsSinceQuit / 86400
         
         print("---> Time since quit: \(secondsToTime(seconds: secsSinceQuit))")
-        //print("---> Time since quit: \(daysSince) days, \(hoursSinceRemainder) hours, \(minsSinceRemainder) mins, \(remainder) seconds")
+        timeLabel.text = "Time since quit: \n\(secondsToTime(seconds: secsSinceQuit))"
         
-        let cigsResisted = daysSince * Int(data[0].smokesPerDay)
+        let daysSince : Double = Double(data[0].timeSinceQuit()) / 60.0 / 60.0 / 24.0
+        let cigsResisted = Int(daysSince * data[0].smokesPerDay)
         print("---> Cigs Resisted: \(cigsResisted)")
+        cigsLabel.text = "Cigs Resisted: \n\(cigsResisted)"
         
         let cashSaved = Double(10) * (data[0].smokesPerDay/data[0].smokesPerPack) * data[0].costPerPack
         let cashSavedString = String(format: "%.2f", cashSaved)
         print("---> Cash Saved: $\(cashSavedString)")
+        moneyLabel.text = "Cash Saved: \n$\(cashSavedString)"
         
-        let lifeTimeSaved = daysSince * 11
-        let lifeSavedDays = lifeTimeSaved / 60 / 24
-        let savedHours  = ((lifeTimeSaved / 60) % 24)
-        let savedMins = lifeTimeSaved % 60
-        print("---> Lifetime Saved: \(lifeSavedDays) days, \(savedHours) hrs, \(savedMins) mins")
+        let minsSaved = daysSince * 11.0
+        let secsSaved = minsSaved * 60
+        
+        print("---> Lifetime Saved: \(secondsToTime(seconds: Int(secsSaved)))")
+        lifeLabel.text = "Lifetime Saved: \n\(secondsToTime(seconds: Int(secsSaved)))"
         
     }
 
