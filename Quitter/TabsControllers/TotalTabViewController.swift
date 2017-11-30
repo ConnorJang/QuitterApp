@@ -10,29 +10,34 @@ import UIKit
 
 class TotalTabViewController: UIViewController {
 
-    var cashBurned = 0.0
-    var cigsSmoked = 0
     var lifeLostMins = 0
     
-    override func viewDidLoad() {
+    @IBOutlet weak var percentLabel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var cigsLabel: UILabel!
+    @IBOutlet weak var lifeLabel: UILabel!
+    
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         let data : [SmokerData] = loadSmokerData()!
 
         let secsSinceQuit : Int = data[0].timeSinceQuit()
-        let daysSince = secsSinceQuit / 86400
-        let cigsResisted = daysSince * Int(data[0].smokesPerDay)
+        let daysSince = Double(secsSinceQuit) / 60.0 / 60.0 / 24.0
+        let cigsResisted = Int(daysSince * data[0].smokesPerDay)
         let cashSaved = Double(10) * (data[0].smokesPerDay/data[0].smokesPerPack) * data[0].costPerPack
-
-        
+        let  cashBurned = (data[0].smokesPerDay/data[0].smokesPerPack) * (data[0].yearsSmoking * 365) * data[0].costPerPack
         print("---------------------- Comparison Stats ------------------------")
         
         // ------------------------ Percentage comparison ------------------------
-        let smokerTimeSecs : Double = data[0].yearsSmoking * 365 * 24 * 60
+        let smokerTimeSecs : Double = data[0].yearsSmoking * 365 * 24 * 60 * 60
         let percentUndone = Double(round(1000*(Double(secsSinceQuit) / smokerTimeSecs))/1000)// round 2 decimal places
         let percentString = String(format: "%.2f", percentUndone) // force 2 decimal places for x.xxx values
         print("---> Percent undone: \(percentString)%")
+        percentLabel.text = "Percent Redeemed: \n\(percentString)%"
         
         // ------------------------ Cash comparison ------------------------
         let cashComparison = cashSaved - cashBurned
@@ -41,32 +46,30 @@ class TotalTabViewController: UIViewController {
         formatter.locale = Locale.current // Change this to another locale if you want to force a specific locale, otherwise this is redundant as the current locale is the default already
         formatter.numberStyle = .currency
         var cashString = ""
-        cashString += formatter.string(from: abs(cashComparison) as NSNumber)!
-        
-        if cashComparison >= 0 {
-            print("---> Cash Comparison: \(cashString)")
-        } else {
-            print("---> Cash Comparison: -\(cashString)")
-        }
+        cashString += formatter.string(from: cashComparison as NSNumber)!
+
+        print("---> Cash Comparison: \(cashString)")
+        moneyLabel.text = "Cash Balance: \n\(cashString)"
+
         
         // ------------------------ Cigs Smoked comparison ------------------------
+        let cigsSmoked = Int((data[0].smokesPerDay) * (data[0].yearsSmoking * 365))
         let cigsComparison = cigsSmoked - cigsResisted
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         var cigsString = ""
         cigsString += numberFormatter.string(from: abs(cigsComparison) as NSNumber)!
-        if cigsComparison >= 0 {
-            print("---> Cigs Smoked Comparison: \(cigsString) cigs need to be resisted")
-        } else {
-            print("---> Cigs Smoked Comparison: \(cigsString) more cigs resisted than smoked!")
-        }
+        print("---> Cigs Smoked Comparison: \(cigsString) more cigs resisted than smoked!")
+        cigsLabel.text = "Cigs Smoked vs Resisted: \n\(cigsString)"
         
-        // ------------------------ Cigs Smoked comparison ------------------------
-        let timeComparison = secsSinceQuit - Int(smokerTimeSecs)
-        if timeComparison >= 0 {
-            print("---> Time Comparison: \(secondsToTime(seconds: abs(timeComparison))) more time smoke-free!")
+        // ------------------------ Life wasted vs reclaimed comparison ------------------------
+        let timeComparison = cigsComparison * 11 * 60
+        print("\(cigsComparison)")
+        if timeComparison <= 0 {
+            print("---> Time Comparison: You have undone all the damage!")
         } else {
-            print("---> Time Comparison: \(secondsToTime(seconds: abs(timeComparison))) more time as a smoker")
+            print("---> Time Comparison: \(secondsToTime(seconds: abs(timeComparison))) lost")
+            lifeLabel.text = "Lifetime Left to be Recovered: \n\(secondsToTime(seconds: abs(timeComparison))) "
         }
         
         print("============= ^^Total Tab^^ =============")
@@ -93,8 +96,14 @@ class TotalTabViewController: UIViewController {
         let mins = remainder / 60
         remainder = remainder % 60
         
-        //print("---> Total Seconds since quit: \(secsSinceQuit)")
-        return "\(days) days, \(hours) hours, \(mins) mins"
+        if days < 365 {
+            return "\(days) days, \(hours) hours, \(mins) mins"
+        } else {
+            let years = days / 365
+            let daysRemainder = days % 365
+            return "\(years) years, \(daysRemainder) days, \(hours) hours, \(mins) mins"
+        }
+        
     }
     
     

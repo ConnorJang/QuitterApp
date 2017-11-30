@@ -37,19 +37,29 @@ class QuitterTabViewController: UIViewController {
         
         let daysSince : Double = Double(data[0].timeSinceQuit()) / 60.0 / 60.0 / 24.0
         let cigsResisted = Int(daysSince * data[0].smokesPerDay)
-        print("---> Cigs Resisted: \(cigsResisted)")
-        cigsLabel.text = "Cigs Resisted: \n\(cigsResisted)"
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        var cigsString = ""
+        cigsString += numberFormatter.string(from: abs(cigsResisted) as NSNumber)!
         
-        let cashSaved = Double(10) * (data[0].smokesPerDay/data[0].smokesPerPack) * data[0].costPerPack
-        let cashSavedString = String(format: "%.2f", cashSaved)
+        print("---> Cigs Resisted: \(cigsString)")
+        cigsLabel.text = "Cigs Resisted: \n\(cigsString)"
+        
+        let cashSaved = (Double(cigsResisted) / data[0].smokesPerPack) * data[0].costPerPack
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current // Change this to another locale if you want to force a specific locale, otherwise this is redundant as the current locale is the default already
+        formatter.numberStyle = .currency
+        var cashSavedString = ""
+        cashSavedString += formatter.string(from: cashSaved as NSNumber)!
+        
+        
         print("---> Cash Saved: $\(cashSavedString)")
-        moneyLabel.text = "Cash Saved: \n$\(cashSavedString)"
+        moneyLabel.text = "Cash Saved: \n\(cashSavedString)"
         
-        let minsSaved = daysSince * 11.0
-        let secsSaved = minsSaved * 60
+        let secsSaved = cigsResisted * 11 * 60
         
         print("---> Lifetime Saved: \(secondsToTime(seconds: Int(secsSaved)))")
-        lifeLabel.text = "Lifetime Saved: \n\(secondsToTime(seconds: Int(secsSaved)))"
+        lifeLabel.text = "Lifetime Recovered by Quitting: \n\(secondsToTime(seconds: Int(secsSaved)))"
         
     }
 

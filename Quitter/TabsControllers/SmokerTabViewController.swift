@@ -13,6 +13,10 @@ class SmokerTabViewController: UIViewController {
     var cashBurned = 0.0
     var cigsSmoked = 0
     var lifeLostMins = 0
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var cigsLabel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var lifeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,20 +25,22 @@ class SmokerTabViewController: UIViewController {
         let data : [SmokerData] = loadSmokerData()!
         
         print("---------------------- Smoker Stats ------------------------")
-        print("---> Time as a smoker: \(data[0].yearsSmoking) years")
+        let secondsSmoking = Int(data[0].yearsSmoking * 365.0 * 24 * 60 * 60)
+        print("---> Time as a smoker: \(secondsToTime(seconds: secondsSmoking))")
+        timeLabel.text = "Time as a smoker: \n\(secondsToTime(seconds: secondsSmoking))"
+        
         // Do any additional setup after loading the view.
         cashBurned = (data[0].smokesPerDay/data[0].smokesPerPack) * (data[0].yearsSmoking * 365) * data[0].costPerPack
         print("---> Cash burned: $\(cashBurned)")
+        moneyLabel.text = "Cash burned: \n$\(cashBurned)"
         
-        cigsSmoked = Int((data[0].smokesPerDay) * (data[0].yearsSmoking * 365))
+        cigsSmoked = Int(data[0].smokesPerDay * (data[0].yearsSmoking * 365.0))
         print("---> Cigarettes Smoked: \(cigsSmoked)")
+        cigsLabel.text = "Cigarettes Smoked: \n\(cigsSmoked)"
         
-        lifeLostMins = cigsSmoked * 11
-        let lostDays = lifeLostMins / 60 / 24
-        let lostHours  = ((lifeLostMins / 60) % 24)
-        let lostMins = lifeLostMins % 60
-        print("---> Life Lost : \(lostDays) days, \(lostHours) hrs, \(lostMins) mins")
-        
+        let lostSecs = cigsSmoked * 11 * 60
+        print("---> Life Lost : \(secondsToTime(seconds: lostSecs))")
+        lifeLabel.text = "Lifetime Lost from Smoking: \n\(secondsToTime(seconds: lostSecs))"
         print("============= ^^Smoker Tab^^ =============")
     }
     
@@ -59,8 +65,14 @@ class SmokerTabViewController: UIViewController {
         let mins = remainder / 60
         remainder = remainder % 60
         
-        //print("---> Total Seconds since quit: \(secsSinceQuit)")
-        return "\(days) days, \(hours) hours, \(mins) mins"
+        if days < 365 {
+            return "\(days) days, \(hours) hours, \(mins) mins"
+        } else {
+            let years = days / 365
+            let daysRemainder = days % 365
+            return "\(years) years, \(daysRemainder) days, \(hours) hours, \(mins) mins"
+        }
+        
     }
     
     
