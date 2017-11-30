@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Foundation
 
 class SmokerStatsViewController: UIViewController {
 
     var cashBurned = 0.0
     var cigsSmoked = 0
+    var lifeLostMins = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +23,37 @@ class SmokerStatsViewController: UIViewController {
             item.printSmokerData()
         }
         
+        print("---------------------- Smoker Stats ------------------------")
         // Do any additional setup after loading the view.
         cashBurned = (data[0].smokesPerDay/data[0].smokesPerPack) * (data[0].yearsSmoking * 365) * data[0].costPerPack
-        print("Cash burned: \(cashBurned)")
+        print("---> Cash burned: $\(cashBurned)")
+        
+        cigsSmoked = Int((data[0].smokesPerDay) * (data[0].yearsSmoking * 365))
+        print("---> Cigarettes Cmoked: \(cigsSmoked)")
+        
+        lifeLostMins = cigsSmoked * 11
+        let lifeLostDays = lifeLostMins / 60 / 24
+        let lostHours  = ((lifeLostMins / 60) % 24)
+        let lostMins = lifeLostMins % 60
+//        print("---> Lost Hours (remainder): \(lostHours)")
+//        print("---> Lost Mins (remainder): \(lostMins)")
+//        print("---> Life lost (days): \(lifeLostDays)")
+        print("---> Life Lost : \(lifeLostDays) days, \(lostHours) hrs, \(lostMins) mins")
+        
+        print("---------------------- Quitter Stats ------------------------")
+        
+        let secsSinceQuit : Int = data[0].timeSinceQuit()
+        let daysSince = secsSinceQuit / 60 / 60 / 24
+        var secsSinceRemainder = secsSinceQuit % 86400 // remainder from secs in a day
+        
+        let hoursSinceRemainder = secsSinceRemainder / 3600
+        secsSinceRemainder = secsSinceRemainder % 3600
+        let minsSinceRemainder = secsSinceQuit / 60
+        secsSinceRemainder = secsSinceRemainder % 60
+        
+        print("---> Total Seconds since quit: \(secsSinceQuit)")
+        print("---> Time since quit: \(daysSince) days, \(hoursSinceRemainder) hours, \(minsSinceRemainder) mins, \(secsSinceRemainder) seconds")
+        
     }
 
     override func didReceiveMemoryWarning() {

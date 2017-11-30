@@ -81,6 +81,16 @@ class SmokerData: NSObject, NSCoding {
         self.init(smokesPerDay: smokesPerDay, smokesPerPack: smokesPerPack, costPerPack: costPerPack, yearsSmoking: yearsSmoking, date: date!)
     }
     
+    func timeSinceQuit() -> Int
+    {
+        let today = NSDate()
+        let timeSince = today.timeIntervalSince(date as Date)
+        //let timeSince70 = today.timeIntervalSince1970
+        //print("----> Date: \(date) --- Today: \(today)")
+        //print("---> Time since1970: \(timeSince70)")
+        return Int(timeSince)
+    }
+    
     func printSmokerData()
     {
         print("Smokes Per day: \(smokesPerDay) \nSmokes Per Pack \(smokesPerPack) \nCost Per Pack \(costPerPack) \nYears Smoking: \(yearsSmoking) \nDate: \(date)")
