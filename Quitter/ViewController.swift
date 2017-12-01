@@ -20,9 +20,6 @@ class ViewController: UIViewController {
         // Setup the Steppers
         smokesPerDayStepper.value = Double(smokesPerDayField.text!)!
         smokesPerPackStepper.value = Double(smokesPerPackField.text!)!
-        // Removing '$' from cost value
-        var costString:String = costPerPackField.text!
-        costString.remove(at: costString.startIndex)
         yearsSmokingStepper.value = Double(yearsSmokingField.text!)!
 
     }

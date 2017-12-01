@@ -20,8 +20,10 @@ class SmokerTabViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         let data : [SmokerData] = loadSmokerData()!
         
         print("---------------------- Smoker Stats ------------------------")
@@ -51,6 +53,7 @@ class SmokerTabViewController: UIViewController {
         print("---> Life Lost : \(secondsToTime(seconds: lostSecs))")
         lifeLabel.text = "Lifetime Lost from Smoking: \n\(secondsToTime(seconds: lostSecs))"
         print("============= ^^Smoker Tab^^ =============")
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -23,21 +23,21 @@ class TotalTabViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         let data : [SmokerData] = loadSmokerData()!
-
+        
         let secsSinceQuit : Int = data[0].timeSinceQuit()
         let daysSince = Double(secsSinceQuit) / 60.0 / 60.0 / 24.0
         let cigsResisted = Int(daysSince * data[0].smokesPerDay)
-        let cashSaved = Double(10) * (data[0].smokesPerDay/data[0].smokesPerPack) * data[0].costPerPack
+        let cashSaved = daysSince * (data[0].smokesPerDay/data[0].smokesPerPack) * data[0].costPerPack
         let  cashBurned = (data[0].smokesPerDay/data[0].smokesPerPack) * (data[0].yearsSmoking * 365) * data[0].costPerPack
         print("---------------------- Comparison Stats ------------------------")
         
-        // ------------------------ Percentage comparison ------------------------
-        let smokerTimeSecs : Double = data[0].yearsSmoking * 365 * 24 * 60 * 60
-        let percentUndone = Double(round(1000*(Double(secsSinceQuit) / smokerTimeSecs))/1000)// round 2 decimal places
-        let percentString = String(format: "%.2f", percentUndone) // force 2 decimal places for x.xxx values
-        print("---> Percent undone: \(percentString)%")
-        percentLabel.text = "Percent Redeemed: \n\(percentString)%"
+        
         
         // ------------------------ Cash comparison ------------------------
         let cashComparison = cashSaved - cashBurned
@@ -47,10 +47,10 @@ class TotalTabViewController: UIViewController {
         formatter.numberStyle = .currency
         var cashString = ""
         cashString += formatter.string(from: cashComparison as NSNumber)!
-
+        
         print("---> Cash Comparison: \(cashString)")
         moneyLabel.text = "Cash Balance: \n\(cashString)"
-
+        
         
         // ------------------------ Cigs Smoked comparison ------------------------
         let cigsSmoked = Int((data[0].smokesPerDay) * (data[0].yearsSmoking * 365))
@@ -59,8 +59,14 @@ class TotalTabViewController: UIViewController {
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         var cigsString = ""
         cigsString += numberFormatter.string(from: abs(cigsComparison) as NSNumber)!
-        print("---> Cigs Smoked Comparison: \(cigsString) more cigs resisted than smoked!")
+        print("---> Cigs Smoked Comparison: \(cigsString) more cigs smoked than resisted!")
         cigsLabel.text = "Cigs Smoked vs Resisted: \n\(cigsString)"
+        
+        // ------------------------ Percentage comparison ------------------------
+        let percentUndone = Double(cigsResisted) / Double(cigsSmoked) * 100.0
+        let percentString = String(format: "%.2f", percentUndone) // force 2 decimal places for x.xxx values
+        print("---> Percent undone: \(percentString)%")
+        percentLabel.text = "Percent Redeemed: \n\(percentString)%"
         
         // ------------------------ Life wasted vs reclaimed comparison ------------------------
         let timeComparison = cigsComparison * 11 * 60

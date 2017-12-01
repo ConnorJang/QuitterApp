@@ -240,7 +240,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="3vj-AU-vod">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="3vj-AU-vod">
                                 <rect key="frame" x="16" y="155" width="239" height="308.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many smokes a day?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4v-AK-6Vj">
@@ -279,18 +279,19 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLN-dk-64U">
-                                <rect key="frame" x="135" y="84" width="90" height="30"/>
+                                <rect key="frame" x="135" y="84" width="89.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MZ-2D-bOD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MZ-2D-bOD">
                                 <rect key="frame" x="103" y="514" width="159" height="39"/>
                                 <color key="backgroundColor" red="0.49670031190000002" green="1" blue="0.69258830189999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Save Settings"/>
                                 <connections>
                                     <action selector="letsStartAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A1E-UC-h5o"/>
+                                    <action selector="saveButtonAction:" destination="XC9-5S-vS3" eventType="touchUpInside" id="aHz-fG-uSP"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="zQi-P1-RTv">
@@ -308,6 +309,7 @@
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="yqL-kq-eeA">
                                                 <rect key="frame" x="1.5" y="30" width="94" height="29"/>
                                                 <connections>
+                                                    <action selector="perDayStepperAction:" destination="XC9-5S-vS3" eventType="valueChanged" id="ZKX-bV-Wxl"/>
                                                     <action selector="smokesPerDayAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="OpC-Wc-6Gi"/>
                                                 </connections>
                                             </stepper>
@@ -331,6 +333,7 @@
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="jqX-mS-Pjx">
                                                 <rect key="frame" x="1.5" y="30" width="94" height="29"/>
                                                 <connections>
+                                                    <action selector="perPackStepperAction:" destination="XC9-5S-vS3" eventType="valueChanged" id="8l6-52-giE"/>
                                                     <action selector="smokesPerPackAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ny2-xW-LPk"/>
                                                 </connections>
                                             </stepper>
@@ -363,6 +366,7 @@
                                                 <rect key="frame" x="1.5" y="30" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="yearsSmokingAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="7uU-0D-W0R"/>
+                                                    <action selector="yearsStepperAction:" destination="XC9-5S-vS3" eventType="valueChanged" id="m1N-FG-13n"/>
                                                 </connections>
                                             </stepper>
                                         </subviews>
@@ -386,11 +390,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="vMY-lm-MQS"/>
                     <connections>
-                        <outlet property="costPerPackLabel" destination="Ke4-te-W6p" id="dmA-6c-XfP"/>
+                        <outlet property="costPerPackLabel" destination="tVi-3Y-hD9" id="GW0-o5-6Qo"/>
                         <outlet property="perDayStepper" destination="yqL-kq-eeA" id="TaG-1Q-NTL"/>
+                        <outlet property="perPackStepper" destination="jqX-mS-Pjx" id="3GO-QS-ZD5"/>
+                        <outlet property="saveButton" destination="1MZ-2D-bOD" id="ron-Xd-ewq"/>
                         <outlet property="smokesPerDayLabel" destination="UWx-Fg-wqW" id="0Bw-WB-GQ7"/>
                         <outlet property="smokesPerPackLabel" destination="iO5-ij-bFo" id="123-Z6-c80"/>
                         <outlet property="yearsSmokingLabel" destination="Ke4-te-W6p" id="hJn-8z-qZS"/>
+                        <outlet property="yearsSmokingStepper" destination="O9F-cY-YU2" id="VGP-5W-Gel"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jsk-51-YRX" userLabel="First Responder" sceneMemberID="firstResponder"/>

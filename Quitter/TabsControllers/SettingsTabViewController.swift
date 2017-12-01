@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import os.log
 
 class SettingsTabViewController: UIViewController {
 
+    var data : [SmokerData] = []
     // Input fields
     @IBOutlet weak var smokesPerDayLabel: UITextField!
     @IBOutlet weak var smokesPerPackLabel: UITextField!
@@ -17,19 +19,27 @@ class SettingsTabViewController: UIViewController {
     @IBOutlet weak var yearsSmokingLabel: UITextField!
     // Steppers
     @IBOutlet weak var perDayStepper: UIStepper!
-    
+    @IBOutlet weak var yearsSmokingStepper: UIStepper!
+    @IBOutlet weak var perPackStepper: UIStepper!
+    @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.costPerPackLabel.keyboardType = UIKeyboardType.decimalPad
 
         // Do any additional setup after loading the view.
-        var data : [SmokerData] = loadSmokerData()!
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        data = loadSmokerData()!
         data[0].printSmokerData()
         
         smokesPerDayLabel.text = "\(Int(data[0].smokesPerDay))"
         smokesPerPackLabel.text = "\(Int(data[0].smokesPerPack))"
+        
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
@@ -39,6 +49,10 @@ class SettingsTabViewController: UIViewController {
         
         yearsSmokingLabel.text = "\(data[0].yearsSmoking)"
         
+        // Setup the Steppers
+        perDayStepper.value = Double(smokesPerDayLabel.text!)!
+        perPackStepper.value = Double(smokesPerPackLabel.text!)!
+        yearsSmokingStepper.value = Double(yearsSmokingLabel.text!)!
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +64,45 @@ class SettingsTabViewController: UIViewController {
     public func loadSmokerData() -> [SmokerData]?  {
         return NSKeyedUnarchiver.unarchiveObject(withFile: SmokerData.ArchiveURL.path) as? [SmokerData]
     }
+    
+    // Saving the data entered by the user
+    private func saveSmokerData(smokerData : [SmokerData]) {
+        // Grab the data from the input boxes, then save the 0bject
+        smokerData[0].smokesPerDay = Double(smokesPerDayLabel.text!)!
+        smokerData[0].smokesPerPack = Double(smokesPerPackLabel.text!)!
+        smokerData[0].costPerPack = Double(costPerPackLabel.text!)!
+        smokerData[0].yearsSmoking = Double(yearsSmokingLabel.text!)!
+        
 
+ 
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(smokerData as Any, toFile: SmokerData.ArchiveURL.path)
+        
+        if isSuccessfulSave {
+            os_log("Data successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save Data...", log: OSLog.default, type: .error)
+        }
+        smokerData[0].printSmokerData()
+    }
+
+    @IBAction func saveButtonAction(_ sender: UIButton) {
+        saveSmokerData(smokerData: data)
+        
+    }
+    
+    @IBAction func yearsStepperAction(_ sender: UIStepper) {
+       yearsSmokingLabel.text = Double(sender.value).description
+        
+    }
+
+    @IBAction func perPackStepperAction(_ sender: UIStepper) {
+        smokesPerPackLabel.text = Int(sender.value).description
+    }
+    
+    @IBAction func perDayStepperAction(_ sender: UIStepper) {
+        smokesPerDayLabel.text = Int(sender.value).description
+
+    }
     /*
     // MARK: - Navigation
 

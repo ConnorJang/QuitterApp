@@ -23,11 +23,13 @@ class QuitterTabViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
+    }
 
-        // Do any additional setup after loading the view.
-        let data : [SmokerData] = loadSmokerData()!
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let data : [SmokerData]  = loadSmokerData()!
+        
         print("---------------------- Quitter Stats ------------------------")
         
         let secsSinceQuit : Int = data[0].timeSinceQuit()
@@ -60,9 +62,8 @@ class QuitterTabViewController: UIViewController {
         
         print("---> Lifetime Saved: \(secondsToTime(seconds: Int(secsSaved)))")
         lifeLabel.text = "Lifetime Recovered by Quitting: \n\(secondsToTime(seconds: Int(secsSaved)))"
-        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
