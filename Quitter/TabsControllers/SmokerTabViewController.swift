@@ -31,12 +31,21 @@ class SmokerTabViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         cashBurned = (data[0].smokesPerDay/data[0].smokesPerPack) * (data[0].yearsSmoking * 365) * data[0].costPerPack
-        print("---> Cash burned: $\(cashBurned)")
-        moneyLabel.text = "Cash burned: \n$\(cashBurned)"
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current // Change this to another locale if you want to force a specific locale, otherwise this is redundant as the current locale is the default already
+        formatter.numberStyle = .currency
+        var cashString = ""
+        cashString += formatter.string(from: cashBurned as NSNumber)!
+        print("---> Cash burned: \(cashString)")
+        moneyLabel.text = "Cash burned: \n\(cashString)"
         
         cigsSmoked = Int(data[0].smokesPerDay * (data[0].yearsSmoking * 365.0))
-        print("---> Cigarettes Smoked: \(cigsSmoked)")
-        cigsLabel.text = "Cigarettes Smoked: \n\(cigsSmoked)"
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        var cigsString = ""
+        cigsString += numberFormatter.string(from: cigsSmoked as NSNumber)!
+        print("---> Cigarettes Smoked: \(cigsString)")
+        cigsLabel.text = "Cigarettes Smoked: \n\(cigsString)"
         
         let lostSecs = cigsSmoked * 11 * 60
         print("---> Life Lost : \(secondsToTime(seconds: lostSecs))")

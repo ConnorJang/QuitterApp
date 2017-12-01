@@ -16,6 +16,7 @@
 		13E6BE9E1FCFC42E0015A957 /* QuitterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6BE9D1FCFC42E0015A957 /* QuitterTabViewController.swift */; };
 		13E6BEA01FCFC5450015A957 /* SmokerTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6BE9F1FCFC5450015A957 /* SmokerTabViewController.swift */; };
 		13E6BEA21FCFC55E0015A957 /* TotalTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6BEA11FCFC55E0015A957 /* TotalTabViewController.swift */; };
+		13E6BEA51FD11C2B0015A957 /* SettingsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6BEA41FD11C2B0015A957 /* SettingsTabViewController.swift */; };
 		EA1A15DD1FB634EE0042E79E /* SmokerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A15DC1FB634EE0042E79E /* SmokerData.swift */; };
 		EAC310321FC8DC8B00D6AA0B /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC310311FC8DC8B00D6AA0B /* TabsViewController.swift */; };
 		EAD50D911FBF867500806242 /* QuitterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD50D901FBF867500806242 /* QuitterData.swift */; };
@@ -45,6 +46,7 @@
 		13E6BE9D1FCFC42E0015A957 /* QuitterTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitterTabViewController.swift; sourceTree = "<group>"; };
 		13E6BE9F1FCFC5450015A957 /* SmokerTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokerTabViewController.swift; sourceTree = "<group>"; };
 		13E6BEA11FCFC55E0015A957 /* TotalTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalTabViewController.swift; sourceTree = "<group>"; };
+		13E6BEA41FD11C2B0015A957 /* SettingsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabViewController.swift; sourceTree = "<group>"; };
 		EA1A15DC1FB634EE0042E79E /* SmokerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokerData.swift; sourceTree = "<group>"; };
 		EAC310311FC8DC8B00D6AA0B /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		EAD50D901FBF867500806242 /* QuitterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitterData.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				13E6BEA11FCFC55E0015A957 /* TotalTabViewController.swift */,
 				13E6BE9D1FCFC42E0015A957 /* QuitterTabViewController.swift */,
 				EAC310311FC8DC8B00D6AA0B /* TabsViewController.swift */,
+				13E6BEA41FD11C2B0015A957 /* SettingsTabViewController.swift */,
 			);
 			path = TabsControllers;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				138A29581F973007006EA406 /* ViewController.swift in Sources */,
 				13E6BEA21FCFC55E0015A957 /* TotalTabViewController.swift in Sources */,
 				EAC310321FC8DC8B00D6AA0B /* TabsViewController.swift in Sources */,
+				13E6BEA51FD11C2B0015A957 /* SettingsTabViewController.swift in Sources */,
 				138A29561F973007006EA406 /* AppDelegate.swift in Sources */,
 				EA1A15DD1FB634EE0042E79E /* SmokerData.swift in Sources */,
 				13E6BEA01FCFC5450015A957 /* SmokerTabViewController.swift in Sources */,

@@ -23,7 +23,6 @@ class ViewController: UIViewController {
         // Removing '$' from cost value
         var costString:String = costPerPackField.text!
         costString.remove(at: costString.startIndex)
-        costPerPackStepper.value = Double(costString)!
         yearsSmokingStepper.value = Double(yearsSmokingField.text!)!
 
     }
@@ -49,7 +48,6 @@ class ViewController: UIViewController {
     // Connect the steppers from first-time launch screen
     @IBOutlet weak var smokesPerDayStepper: UIStepper!
     @IBOutlet weak var smokesPerPackStepper: UIStepper!
-    @IBOutlet weak var costPerPackStepper: UIStepper!
     @IBOutlet weak var yearsSmokingStepper: UIStepper!
     
     
@@ -75,9 +73,7 @@ class ViewController: UIViewController {
     @IBAction func smokesPerPackAction(_ sender: UIStepper) {
         smokesPerPackField.text = Int(sender.value).description
     }
-    @IBAction func costPerPackAction(_ sender: UIStepper) {
 
-    }
     @IBAction func yearsSmokingAction(_ sender: UIStepper) {
         yearsSmokingField.text = Int(sender.value).description
         smokerData?.yearsSmoking = yearsSmokingStepper.value
@@ -90,7 +86,7 @@ class ViewController: UIViewController {
 //        print("smokesPerPack = \(smokerData?.smokesPerPack ?? -1)")
 //        print("costPerPack = $\(smokerData?.costPerPack ?? -1)")
 //        print("yearsSmoking = \(smokerData?.yearsSmoking ?? -1)")
-        performSegue(withIdentifier: "letsStartSegue", sender: sender)
+        performSegue(withIdentifier: "goToTabs", sender: sender)
     }
     // Saving the data entered by the user
     private func saveSmokerData() {
