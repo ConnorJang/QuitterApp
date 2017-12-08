@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,46 +16,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="LxB-CZ-TtS">
-                                <rect key="frame" x="21" y="180" width="224" height="307"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many smokes a day?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1G-PH-c08">
-                                        <rect key="frame" x="0.0" y="0.0" width="197.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many in a pack?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkG-7z-64p">
-                                        <rect key="frame" x="0.0" y="95.5" width="161" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much does a pack cost?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Say-xi-v76">
-                                        <rect key="frame" x="0.0" y="191" width="224" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many years smoking?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtR-DY-ukp">
-                                        <rect key="frame" x="0.0" y="286.5" width="203.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quitter!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7P-8R-ZCs">
-                                <rect key="frame" x="140" y="80" width="94" height="30"/>
+                                <rect key="frame" x="140" y="80" width="134" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8J0-zL-DnY">
-                                <rect key="frame" x="136" y="547" width="103" height="39"/>
+                                <rect key="frame" x="156" y="546.33333333333337" width="103" height="39"/>
                                 <color key="backgroundColor" red="0.49670031186054164" green="1" blue="0.69258830188913612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Let's Start!"/>
@@ -63,14 +34,43 @@
                                     <action selector="letsStartAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QPl-G6-EEr"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="LxB-CZ-TtS">
+                                <rect key="frame" x="44" y="185.99999999999997" width="224" height="306.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many smokes a day?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1G-PH-c08">
+                                        <rect key="frame" x="0.0" y="0.0" width="197.33333333333334" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many in a pack?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkG-7z-64p">
+                                        <rect key="frame" x="0.0" y="95.333333333333314" width="161" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much does a pack cost?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Say-xi-v76">
+                                        <rect key="frame" x="0.0" y="190.66666666666669" width="224" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many years smoking?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtR-DY-ukp">
+                                        <rect key="frame" x="0.0" y="286" width="203.33333333333334" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="UFS-Fe-hG9">
-                                <rect key="frame" x="253" y="177" width="94" height="312"/>
+                                <rect key="frame" x="276" y="183" width="94" height="312"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="A0q-67-Hd8">
                                         <rect key="frame" x="0.0" y="0.0" width="94" height="59"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dyz-dg-2cP">
-                                                <rect key="frame" x="28.5" y="0.0" width="37" height="30"/>
+                                                <rect key="frame" x="28.666666666666686" y="0.0" width="37" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -146,11 +146,11 @@
                             <constraint firstItem="P7P-8R-ZCs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BAp-Ab-Y58"/>
                             <constraint firstItem="UFS-Fe-hG9" firstAttribute="leading" secondItem="LxB-CZ-TtS" secondAttribute="trailing" constant="8" id="FOc-Lb-0ey"/>
                             <constraint firstItem="P7P-8R-ZCs" firstAttribute="centerX" secondItem="8J0-zL-DnY" secondAttribute="centerX" id="HTE-2L-i9P"/>
-                            <constraint firstItem="UFS-Fe-hG9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="157" id="eQB-re-5Xv"/>
-                            <constraint firstItem="LxB-CZ-TtS" firstAttribute="top" secondItem="P7P-8R-ZCs" secondAttribute="bottom" constant="70" id="egH-fy-rZi"/>
+                            <constraint firstItem="UFS-Fe-hG9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="163" id="eQB-re-5Xv"/>
+                            <constraint firstItem="LxB-CZ-TtS" firstAttribute="top" secondItem="P7P-8R-ZCs" secondAttribute="bottom" constant="76" id="egH-fy-rZi"/>
                             <constraint firstItem="P7P-8R-ZCs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="g3U-bL-ze0"/>
-                            <constraint firstItem="8J0-zL-DnY" firstAttribute="top" secondItem="LxB-CZ-TtS" secondAttribute="bottom" constant="60" id="p7F-cM-mQc"/>
-                            <constraint firstItem="LxB-CZ-TtS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="sXw-xL-AcM"/>
+                            <constraint firstItem="8J0-zL-DnY" firstAttribute="top" secondItem="LxB-CZ-TtS" secondAttribute="bottom" constant="54.000000000000114" id="p7F-cM-mQc"/>
+                            <constraint firstItem="LxB-CZ-TtS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="sXw-xL-AcM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -174,11 +174,11 @@
             <objects>
                 <viewController title="Quitter Progress" id="4rV-Aw-8v6" customClass="QuitterTabViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ki3-wH-tvt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKY-gO-aCp">
-                                <rect key="frame" x="153" y="76" width="69" height="28"/>
+                                <rect key="frame" x="173" y="92" width="69" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="iTq-iD-BHo"/>
                                 </constraints>
@@ -187,7 +187,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cigs resisted: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGD-jy-Kgb">
-                                <rect key="frame" x="16" y="281" width="343" height="97"/>
+                                <rect key="frame" x="20" y="272" width="374" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="Y92-MO-jP1"/>
                                 </constraints>
@@ -195,23 +195,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifetime saved:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfN-Ec-PEt">
-                                <rect key="frame" x="16" y="461" width="343" height="150"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time since quit:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne2-8q-Q9r">
-                                <rect key="frame" x="16" y="176" width="343" height="97"/>
+                                <rect key="frame" x="20" y="158" width="374" height="106"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money Saved:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ER-Ly-xxq">
-                                <rect key="frame" x="16" y="386" width="343" height="102"/>
+                                <rect key="frame" x="20" y="377" width="374" height="112.00000000000006"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="102" id="F69-Uy-xUf"/>
+                                    <constraint firstAttribute="height" constant="112" id="F69-Uy-xUf"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifetime saved:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfN-Ec-PEt">
+                                <rect key="frame" x="20" y="497" width="374" height="102.33333333333337"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -219,22 +219,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ne2-8q-Q9r" firstAttribute="top" secondItem="GKY-gO-aCp" secondAttribute="bottom" constant="72" id="0M5-xa-akL"/>
+                            <constraint firstItem="ne2-8q-Q9r" firstAttribute="top" secondItem="GKY-gO-aCp" secondAttribute="bottom" constant="38" id="0M5-xa-akL"/>
                             <constraint firstItem="9ER-Ly-xxq" firstAttribute="trailing" secondItem="BfN-Ec-PEt" secondAttribute="trailing" id="33t-VE-iLt"/>
                             <constraint firstItem="uGD-jy-Kgb" firstAttribute="leading" secondItem="9ER-Ly-xxq" secondAttribute="leading" id="CDf-3B-1JK"/>
-                            <constraint firstItem="BfN-Ec-PEt" firstAttribute="top" secondItem="9ER-Ly-xxq" secondAttribute="bottom" constant="-27" id="EaI-TI-1UH"/>
+                            <constraint firstItem="BfN-Ec-PEt" firstAttribute="top" secondItem="9ER-Ly-xxq" secondAttribute="bottom" constant="8" id="EaI-TI-1UH"/>
                             <constraint firstItem="9ER-Ly-xxq" firstAttribute="top" secondItem="uGD-jy-Kgb" secondAttribute="bottom" constant="8" id="Kf6-D8-x78"/>
                             <constraint firstItem="9ER-Ly-xxq" firstAttribute="leading" secondItem="BfN-Ec-PEt" secondAttribute="leading" id="MDq-xu-2ZX"/>
                             <constraint firstItem="ne2-8q-Q9r" firstAttribute="trailing" secondItem="Ki3-wH-tvt" secondAttribute="trailingMargin" id="NZV-z9-y9l"/>
                             <constraint firstItem="uGD-jy-Kgb" firstAttribute="top" secondItem="ne2-8q-Q9r" secondAttribute="bottom" constant="8" id="Qc1-ce-Mf3"/>
                             <constraint firstItem="ne2-8q-Q9r" firstAttribute="leading" secondItem="uGD-jy-Kgb" secondAttribute="leading" id="Wob-hl-0jj"/>
-                            <constraint firstItem="6d8-8a-1MY" firstAttribute="bottom" secondItem="BfN-Ec-PEt" secondAttribute="bottom" constant="7" id="YfU-BM-PV5"/>
-                            <constraint firstItem="GKY-gO-aCp" firstAttribute="top" secondItem="6d8-8a-1MY" secondAttribute="top" constant="56" id="biB-Vj-h6u"/>
+                            <constraint firstItem="6d8-8a-1MY" firstAttribute="bottom" secondItem="BfN-Ec-PEt" secondAttribute="bottom" constant="87.666666666666629" id="YfU-BM-PV5"/>
+                            <constraint firstItem="GKY-gO-aCp" firstAttribute="top" secondItem="6d8-8a-1MY" secondAttribute="top" constant="72" id="biB-Vj-h6u"/>
                             <constraint firstItem="uGD-jy-Kgb" firstAttribute="trailing" secondItem="9ER-Ly-xxq" secondAttribute="trailing" id="ivC-ba-qfY"/>
                             <constraint firstItem="ne2-8q-Q9r" firstAttribute="trailing" secondItem="uGD-jy-Kgb" secondAttribute="trailing" id="rUn-Mt-cXj"/>
                             <constraint firstItem="GKY-gO-aCp" firstAttribute="centerX" secondItem="ne2-8q-Q9r" secondAttribute="centerX" id="tr6-pZ-L2H"/>
                             <constraint firstItem="ne2-8q-Q9r" firstAttribute="leading" secondItem="Ki3-wH-tvt" secondAttribute="leadingMargin" id="vMx-VE-tIK"/>
-                            <constraint firstItem="uGD-jy-Kgb" firstAttribute="centerY" secondItem="Ki3-wH-tvt" secondAttribute="centerY" constant="-4" id="xWb-ci-Bxk"/>
+                            <constraint firstItem="uGD-jy-Kgb" firstAttribute="centerY" secondItem="Ki3-wH-tvt" secondAttribute="centerY" constant="-47.5" id="xWb-ci-Bxk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6d8-8a-1MY"/>
                     </view>
@@ -248,24 +248,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5n-ey-ErA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3269.5999999999999" y="449.32533733133437"/>
+            <point key="canvasLocation" x="3269.5652173913045" y="449.18478260869568"/>
         </scene>
         <!--Quitter Stats-->
         <scene sceneID="398-SO-SHY">
             <objects>
                 <viewController title="Quitter Stats" id="XC9-5S-vS3" customClass="SettingsTabViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jAc-G6-62b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLN-dk-64U">
-                                <rect key="frame" x="143.5" y="82" width="89.5" height="30"/>
+                                <rect key="frame" x="162.33333333333334" y="82" width="89.333333333333343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MZ-2D-bOD">
-                                <rect key="frame" x="108" y="524" width="159" height="39"/>
+                                <rect key="frame" x="107.99999999999999" y="559" width="197.66666666666663" height="39"/>
                                 <color key="backgroundColor" red="0.49670031190000002" green="1" blue="0.69258830189999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Save Settings"/>
@@ -275,10 +275,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="3vj-AU-vod">
-                                <rect key="frame" x="16" y="177" width="239" height="308.5"/>
+                                <rect key="frame" x="20" y="211.99999999999997" width="239" height="308.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many smokes a day?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4v-AK-6Vj">
-                                        <rect key="frame" x="0.0" y="0.0" width="197.5" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="197.33333333333334" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="KyO-IL-QzR"/>
                                         </constraints>
@@ -305,7 +305,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many years smoking?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abl-1d-SSU">
-                                        <rect key="frame" x="0.0" y="288" width="203.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="288" width="203.33333333333334" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -313,7 +313,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="zQi-P1-RTv">
-                                <rect key="frame" x="262" y="177" width="97" height="312"/>
+                                <rect key="frame" x="297" y="212" width="97" height="312"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3KC-gJ-VBw">
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="59"/>
@@ -325,7 +325,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="yqL-kq-eeA">
-                                                <rect key="frame" x="1.5" y="30" width="94" height="29"/>
+                                                <rect key="frame" x="1.6666666666666856" y="30" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="perDayStepperAction:" destination="XC9-5S-vS3" eventType="valueChanged" id="ZKX-bV-Wxl"/>
                                                     <action selector="smokesPerDayAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="OpC-Wc-6Gi"/>
@@ -349,7 +349,7 @@
                                                 </connections>
                                             </textField>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="jqX-mS-Pjx">
-                                                <rect key="frame" x="1.5" y="30" width="94" height="29"/>
+                                                <rect key="frame" x="1.6666666666666856" y="30" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="perPackStepperAction:" destination="XC9-5S-vS3" eventType="valueChanged" id="8l6-52-giE"/>
                                                     <action selector="smokesPerPackAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ny2-xW-LPk"/>
@@ -381,7 +381,7 @@
                                                 </connections>
                                             </textField>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-cY-YU2">
-                                                <rect key="frame" x="1.5" y="30" width="94" height="29"/>
+                                                <rect key="frame" x="1.6666666666666856" y="30" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="yearsSmokingAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="7uU-0D-W0R"/>
                                                     <action selector="yearsStepperAction:" destination="XC9-5S-vS3" eventType="valueChanged" id="m1N-FG-13n"/>
@@ -427,11 +427,11 @@
             <objects>
                 <viewController title="Total Statistics" id="nQB-jF-nJd" customClass="TotalTabViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9sN-wU-5Co">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percent Redeemed:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vP7-Pd-lvn">
-                                <rect key="frame" x="16" y="144" width="343" height="97"/>
+                                <rect key="frame" x="20" y="144" width="374" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="xKR-UY-Udn"/>
                                 </constraints>
@@ -440,7 +440,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash Balance" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAu-5s-K7q">
-                                <rect key="frame" x="16" y="249" width="343" height="104"/>
+                                <rect key="frame" x="20" y="249" width="374" height="104"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="104" id="jzt-bn-UNG"/>
                                 </constraints>
@@ -449,7 +449,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cigs Smoked vs Resisted" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XP0-lo-Plf">
-                                <rect key="frame" x="16" y="360" width="343" height="102"/>
+                                <rect key="frame" x="20" y="360" width="374" height="102"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="xFG-Pv-MmG"/>
                                 </constraints>
@@ -458,13 +458,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifetime Damage:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaI-Gs-y9b">
-                                <rect key="frame" x="16" y="470" width="343" height="109"/>
+                                <rect key="frame" x="20" y="470" width="374" height="114"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuA-BK-nzq">
-                                <rect key="frame" x="135" y="81" width="104" height="28"/>
+                                <rect key="frame" x="154.66666666666666" y="81" width="103.99999999999997" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="qtd-TE-iTO"/>
                                 </constraints>
@@ -484,7 +484,7 @@
                             <constraint firstItem="vP7-Pd-lvn" firstAttribute="leading" secondItem="9sN-wU-5Co" secondAttribute="leadingMargin" id="O7L-GZ-v4P"/>
                             <constraint firstItem="XP0-lo-Plf" firstAttribute="trailing" secondItem="RaI-Gs-y9b" secondAttribute="trailing" id="aK1-BQ-BS4"/>
                             <constraint firstItem="RaI-Gs-y9b" firstAttribute="top" secondItem="XP0-lo-Plf" secondAttribute="bottom" constant="8" symbolic="YES" id="cSw-oI-aWE"/>
-                            <constraint firstItem="jLJ-wS-WD3" firstAttribute="bottom" secondItem="RaI-Gs-y9b" secondAttribute="bottom" constant="39" id="ecu-Fq-Un9"/>
+                            <constraint firstItem="jLJ-wS-WD3" firstAttribute="bottom" secondItem="RaI-Gs-y9b" secondAttribute="bottom" constant="103" id="ecu-Fq-Un9"/>
                             <constraint firstItem="VuA-BK-nzq" firstAttribute="centerX" secondItem="vP7-Pd-lvn" secondAttribute="centerX" id="fIG-nW-fvx"/>
                             <constraint firstItem="vP7-Pd-lvn" firstAttribute="trailing" secondItem="gAu-5s-K7q" secondAttribute="trailing" id="lRN-H6-8YW"/>
                             <constraint firstItem="vP7-Pd-lvn" firstAttribute="trailing" secondItem="9sN-wU-5Co" secondAttribute="trailingMargin" id="pqz-m5-ZBP"/>
@@ -503,14 +503,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVX-jj-x66" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3269.5999999999999" y="-214.54272863568218"/>
+            <point key="canvasLocation" x="3269.5652173913045" y="-215.21739130434784"/>
         </scene>
         <!--Smoker Progress-->
         <scene sceneID="c34-Vf-P62">
             <objects>
                 <viewController title="Smoker Progress" id="eVv-g9-sB0" customClass="SmokerTabViewController" customModule="Quitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PYs-4s-918">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I01-Uf-R3C">
@@ -521,7 +521,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time since quit:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOP-29-OMi">
-                                <rect key="frame" x="16" y="152" width="343" height="97"/>
+                                <rect key="frame" x="20" y="152" width="374" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="eac-rB-3p0"/>
                                 </constraints>
@@ -530,7 +530,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cigarettes Smoked: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gZ-aI-YMO">
-                                <rect key="frame" x="16" y="257" width="343" height="104"/>
+                                <rect key="frame" x="20" y="257" width="374" height="104"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="104" id="bBD-Vf-21w"/>
                                 </constraints>
@@ -539,7 +539,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money Burned:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FX-Ad-dP5">
-                                <rect key="frame" x="16" y="368" width="343" height="102"/>
+                                <rect key="frame" x="20" y="368" width="374" height="102"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="E89-2c-FZp"/>
                                 </constraints>
@@ -548,13 +548,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifetime Lost:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVE-HT-Td5">
-                                <rect key="frame" x="16" y="478" width="343" height="109"/>
+                                <rect key="frame" x="20" y="478" width="374" height="99"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoker Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUz-cx-hHR">
-                                <rect key="frame" x="101" y="82" width="172" height="43"/>
+                                <rect key="frame" x="101" y="82" width="211" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="YPp-wx-Q8F"/>
                                 </constraints>
@@ -580,7 +580,7 @@
                             <constraint firstItem="PUz-cx-hHR" firstAttribute="leading" secondItem="agQ-pB-mE8" secondAttribute="leading" constant="101" id="nn5-7g-uhg"/>
                             <constraint firstItem="4gZ-aI-YMO" firstAttribute="top" secondItem="hOP-29-OMi" secondAttribute="bottom" constant="8" symbolic="YES" id="uqv-ZT-4oD"/>
                             <constraint firstItem="PUz-cx-hHR" firstAttribute="top" secondItem="agQ-pB-mE8" secondAttribute="top" constant="62" id="vxw-mG-rJS"/>
-                            <constraint firstItem="agQ-pB-mE8" firstAttribute="bottom" secondItem="sVE-HT-Td5" secondAttribute="bottom" constant="31" id="x64-Fl-Iab"/>
+                            <constraint firstItem="agQ-pB-mE8" firstAttribute="bottom" secondItem="sVE-HT-Td5" secondAttribute="bottom" constant="110" id="x64-Fl-Iab"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="agQ-pB-mE8"/>
                     </view>
@@ -594,7 +594,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQi-Ya-ac1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3252" y="-886.50674662668678"/>
+            <point key="canvasLocation" x="3250.7246376811595" y="-886.95652173913049"/>
         </scene>
         <!--Tabs View Controller-->
         <scene sceneID="sGb-PL-8BJ">
